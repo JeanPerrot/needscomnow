@@ -59,10 +59,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HelloWorld.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="HelloWorld.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/groovy/org/rhok/pdx/HelloWorld.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="76" selection-start="631" selection-end="631" vertical-scroll-proportion="0.12681913">
+            <state line="17" column="76" selection-start="631" selection-end="631" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,10 +70,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="build.gradle" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="55" selection-start="90" selection-end="90" vertical-scroll-proportion="-2.4">
+            <state line="10" column="105" selection-start="204" selection-end="204" vertical-scroll-proportion="0.32894737">
               <folding />
             </state>
           </provider>
@@ -89,8 +89,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/groovy/org/rhok/pdx/HelloWorld.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
       </list>
     </option>
   </component>
@@ -421,19 +421,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="55" selection-start="90" selection-end="90" vertical-scroll-proportion="-2.4">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/groovy/org/rhok/pdx/HelloWorld.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="76" selection-start="631" selection-end="631" vertical-scroll-proportion="0.12681913">
+        <state line="17" column="76" selection-start="631" selection-end="631" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="105" selection-start="204" selection-end="204" vertical-scroll-proportion="0.32894737">
+          <folding />
         </state>
       </provider>
     </entry>
