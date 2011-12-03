@@ -9,4 +9,12 @@ public class SignalStrength {
         'Hello World With graffiti and all '
     }
 
+    public static void main(String[] args) throws Exception {
+        Graffiti.config['port'] = 8111
+        Graffiti.serve this
+        Graffiti.start()
+
+    }
+
+
 }
