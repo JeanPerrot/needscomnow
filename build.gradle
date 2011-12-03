@@ -1,8 +1,12 @@
+apply plugin:'idea'
+apply plugin: 'groovy'
 apply plugin:'java'
 apply plugin:'application'
 
-mainClassName = "HelloWorld"
+mainClassName = "org.rhok.pdx.HelloWorld"
 applicationName = "app"
+
+sourceCompatibility="1.6"
 
 repositories {
     mavenCentral()
@@ -11,6 +15,7 @@ repositories {
 dependencies {
     compile 'org.eclipse.jetty:jetty-servlet:7.5.3.v20111011'
     compile 'javax.servlet:servlet-api:2.5'
+    compile 'com.google.code.gson:gson:2.0'
 }
 
 task stage(dependsOn: ['clean', 'installApp'])
