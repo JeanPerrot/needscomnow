@@ -32,7 +32,7 @@ public class HelloWorld extends HttpServlet {
     private static Integer getPort() {
         Integer port = null;
         try {
-            Integer.valueOf(System.getenv("PORT"));
+            port = Integer.valueOf(System.getenv("PORT"));
         } catch (Exception e) {
             port = 8881;
         }
