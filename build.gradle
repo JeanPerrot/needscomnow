@@ -3,7 +3,7 @@ apply plugin: 'groovy'
 apply plugin: 'java'
 apply plugin: 'application'
 
-mainClassName = "org.rhok.pdx.HelloWorld"
+mainClassName = "org.rhok.pdx.SignalStrength"
 applicationName = "app"
 
 sourceCompatibility = "1.6"
@@ -16,7 +16,10 @@ dependencies {
     compile 'org.eclipse.jetty:jetty-servlet:7.5.3.v20111011'
     compile 'javax.servlet:servlet-api:2.5'
     compile 'com.google.code.gson:gson:2.0'
+    compile files('libs/graffiti-1.0-rest-SNAPSHOT.jar')
+
     groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.8.2'
+
 }
 
 task stage(dependsOn: ['clean', 'installApp'])
