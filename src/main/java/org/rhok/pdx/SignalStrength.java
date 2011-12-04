@@ -66,6 +66,7 @@ public class SignalStrength extends HttpServlet {
         server.join();
     }
 
+    //TODO - externalize
     private static Integer getPort() {
         Integer port = null;
         try {

@@ -2,14 +2,16 @@ package org.rhok.pdx;
 
 public class DataPoint {
     private Location location;
-    private double intensity;
+    private int signal;
+    private int wifi;
     private long timestamp;
 
 
-    public DataPoint(Location location, double intensity, long timestamp) {
+    public DataPoint(Location location, int signal, int wifi, long timestamp) {
         this.location = location;
-        this.intensity = intensity;
+        this.signal = signal;
         this.timestamp = timestamp;
+        this.wifi = wifi;
     }
 
     public Location getLocation() {
@@ -20,19 +22,27 @@ public class DataPoint {
         this.location = location;
     }
 
-    public double getIntensity() {
-        return intensity;
+    public double getSignal() {
+        return signal;
     }
 
-    public void setIntensity(double intensity) {
-        this.intensity = intensity;
+    public void setSignal(int signal) {
+        this.signal = signal;
     }
 
     public long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(long timestamp) {
+    public void setTimestamp(int timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public int getWifi() {
+        return wifi;
+    }
+
+    public void setWifi(int wifi) {
+        this.wifi = wifi;
     }
 }

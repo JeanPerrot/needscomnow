@@ -18,6 +18,7 @@ dependencies {
     compile 'org.eclipse.jetty:jetty-servlet:7.5.3.v20111011'
 
     compile 'javax.servlet:servlet-api:2.5'
+    compile 'org.mongodb:mongo-java-driver:2.7.2'
     compile 'com.google.code.gson:gson:2.0'
 
     groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.8.2'

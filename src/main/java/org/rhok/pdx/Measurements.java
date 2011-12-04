@@ -13,8 +13,8 @@ public class Measurements {
         measurements.add(d);
     }
 
-    public void add(double lat, double lng, double measurement, long timestamp) {
-        measurements.add(new DataPoint(new Location(lat, lng), measurement, timestamp));
+    public void add(double lat, double lng, int measurement, int wifi, long timestamp) {
+        measurements.add(new DataPoint(new Location(lat, lng), measurement, wifi, timestamp));
     }
 
     public Measurements(List<DataPoint> measurements) {

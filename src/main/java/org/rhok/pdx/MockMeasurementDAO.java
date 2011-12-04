@@ -19,12 +19,18 @@ public class MockMeasurementDAO implements MeasurementsDAO {
                 double lng = beginLng + i / 30 * radius;
 
 
-                double measurement = i + j;
+                int signal = i + j;
+                int wifi = 30 - i + j;
 
-                retValue.add(lat, lng, measurement, System.currentTimeMillis());
+                retValue.add(lat, lng, signal, wifi, System.currentTimeMillis());
             }
         }
         return retValue;
+
+    }
+
+    @Override
+    public void saveMeasurements(Measurements ms) {
 
     }
 }
