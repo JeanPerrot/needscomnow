@@ -59,10 +59,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SignalStrength.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SignalStrength.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="112" selection-start="1630" selection-end="1630" vertical-scroll-proportion="0.0">
+            <state line="94" column="69" selection-start="3448" selection-end="3448" vertical-scroll-proportion="0.6413502">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,10 +79,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MongoAccess.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MongoAccess.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MongoAccess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="52" selection-start="2125" selection-end="2125" vertical-scroll-proportion="0.52">
+            <state line="59" column="60" selection-start="1690" selection-end="1690" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -175,10 +175,10 @@
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/MeasurementsDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/rhok/pdx/MeasurementsDAOImplTest.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.xml" />
         <option value="$PROJECT_DIR$/src/test/java/org/rhok/pdx/MongoAccessTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/MongoAccess.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java" />
       </list>
     </option>
   </component>
@@ -635,7 +635,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924472" sideWeight="0.55789477" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.44210526" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44210526" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -781,19 +781,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MongoAccess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="112" selection-start="1630" selection-end="1630" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="59" column="60" selection-start="1690" selection-end="1690" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MongoAccess.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="52" selection-start="2125" selection-end="2125" vertical-scroll-proportion="0.52">
-          <folding />
+        <state line="94" column="69" selection-start="3448" selection-end="3448" vertical-scroll-proportion="0.6413502">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

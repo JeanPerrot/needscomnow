@@ -57,9 +57,10 @@ public class MongoAccess {
         Mongo mongo = null;
         try {
             mongo = new Mongo(new MongoURI(url));
+            logger.info("successfully connected to MongoDB");
             return mongo;
         } catch (Exception e) {
-            //can't find Mongo, die.
+            logger.error("could not create connection to MongoDB", e);
             throw new RuntimeException(e);
         }
     }

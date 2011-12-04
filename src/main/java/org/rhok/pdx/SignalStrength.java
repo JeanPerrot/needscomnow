@@ -22,11 +22,13 @@ public class SignalStrength extends HttpServlet {
     private MeasurementsDAO dao;
 
     public SignalStrength() {
-        //TODO - spring?
+        logger.info("creating the SignalStrength servlet");
         MeasurementsDAOImpl dao = new MeasurementsDAOImpl();
         MongoAccess access = new MongoAccess();
         dao.setMongoAccess(access);
         this.dao = dao;
+        logger.info("servlet created successfully");
+
     }
 
     @Override
@@ -81,16 +83,19 @@ public class SignalStrength extends HttpServlet {
 
     public static void main(String[] args) throws Exception {
         try {
+            logger.info("starting application");
             Integer port = getPort();
             Server server = new Server(port);
             ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
             context.setContextPath("/");
             server.setHandler(context);
             context.addServlet(new ServletHolder(new SignalStrength()), "/*");
+            logger.info("starting the server");
             server.start();
             server.join();
+            logger.info("server started");
         } catch (Exception e) {
-            logger.error("error during initialization", e);
+            logger.error("error during application initialization", e);
             e.printStackTrace();
         }
     }
