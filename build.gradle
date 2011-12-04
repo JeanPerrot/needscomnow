@@ -3,7 +3,7 @@ apply plugin: 'groovy'
 apply plugin: 'java'
 apply plugin: 'application'
 
-mainClassName = "pdx.SignalStrength"
+mainClassName = "org.rhok.pdx.SignalStrength"
 applicationName = "app"
 
 sourceCompatibility = "1.6"
