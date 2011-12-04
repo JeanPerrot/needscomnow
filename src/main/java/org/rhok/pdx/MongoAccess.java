@@ -24,6 +24,7 @@ public class MongoAccess {
     public MongoAccess() {
         this.dbName = "app1930625";
         mongo = getMongo();
+        logger.info("connection to mongo database " + dbName);
         db = mongo.getDB(dbName);
         setupDB();
     }
@@ -56,6 +57,7 @@ public class MongoAccess {
         String url = getMongoUrl();
         Mongo mongo = null;
         try {
+            logger.info("connecting to mongo db");
             mongo = new Mongo(new MongoURI(url));
             logger.info("successfully connected to MongoDB");
             return mongo;
