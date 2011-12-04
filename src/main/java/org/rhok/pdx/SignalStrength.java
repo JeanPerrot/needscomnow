@@ -17,7 +17,15 @@ public class SignalStrength extends HttpServlet {
 
     private Gson gson = new Gson();
 
-    private MeasurementsDAO dao = new MockMeasurementDAO();
+    private MeasurementsDAO dao;
+
+    public SignalStrength() {
+        //TODO - spring?
+        MeasurementsDAOImpl dao = new MeasurementsDAOImpl();
+        MongoAccess access = new MongoAccess();
+        dao.setMongoAccess(access);
+        this.dao = dao;
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -26,36 +34,40 @@ public class SignalStrength extends HttpServlet {
         String lngStr = req.getParameter("lng");
         String rStr = req.getParameter("range");
         String mStr = req.getParameter("max_count");
+        String timestampStr=req.getParameter("timestamp");
 
         double lat = Double.parseDouble(latStr);
         double lng = Double.parseDouble(lngStr);
         double range = Double.parseDouble(rStr);
         int maxCount = Integer.parseInt(mStr);
+        long timestamp=Long.parseLong(timestampStr);
 
         Location location = new Location(lat, lng);
 
-        Measurements measurements = getMeasurements(location, range, maxCount);
+        Measurements measurements = getMeasurements(location, range, timestamp,maxCount);
 
         String json = gson.toJson(measurements);
 
         resp.getWriter().print(json);
     }
 
-    private Measurements getMeasurements(Location location, double range, int maxCount) {
-        return dao.getMeasurements(location, range, maxCount);
+    private Measurements getMeasurements(Location location, double range, long timestamp, int maxCount) {
+        return dao.getMeasurements(location, range, timestamp,maxCount);
 
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Measurements measurements = parseFromRequest(req.getReader());
-        resp.getWriter().print("Request was successfully parsed, but this is still a mock!");
+        dao.saveMeasurements(measurements);
+        resp.getWriter().print("Successfully saved " + measurements.getMeasurements().size() + " data points");
     }
 
     protected Measurements parseFromRequest(Reader reader) throws IOException {
         Measurements measurements = gson.fromJson(reader, Measurements.class);
         return measurements;
     }
+
 
     public static void main(String[] args) throws Exception {
         Integer port = getPort();

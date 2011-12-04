@@ -1,14 +1,17 @@
 package org.rhok.pdx;
 
 import com.mongodb.*;
+import com.mongodb.util.JSON;
 
 import java.net.UnknownHostException;
+import java.util.List;
 
 public class MongoAccess {
 
     public static final String DB_NAME = "signalstrength";
     public static final String MONGO_URL_PROP = "MONGOHQ_URL";
     public static final String MEASUREMENTS = "measurements";
+    public static final int COLLECTION_EXISTS = -5;
 
     private String dbName;
     private Mongo mongo;
@@ -16,18 +19,29 @@ public class MongoAccess {
 
 
     public MongoAccess(String dbName) {
+        this.dbName = dbName;
         mongo = getMongo();
         db = mongo.getDB(dbName);
         setupDB();
     }
 
+    public MongoAccess() {
+        this(DB_NAME);
+    }
+
     //ensure that the collection is indexed for geolocation queries
-    private void setupDB() {
-        db.createCollection(MEASUREMENTS, new BasicDBObject());
+    public void setupDB() {
+        try {
+            db.createCollection(MEASUREMENTS, new BasicDBObject());
+        } catch (MongoException e) {
+            if (e.getCode() != COLLECTION_EXISTS) {
+                throw e;
+            }
+        }
         DBObject index = new BasicDBObject();
-        index.put("loc", "2d");
+        index.put("location", "2d");
         DBCollection collection = getCollection();
-        collection.ensureIndex(index);
+        collection.createIndex(index);
     }
 
     public DBCollection getCollection() {

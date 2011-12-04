@@ -7,7 +7,7 @@ public class MockMeasurementDAO implements MeasurementsDAO {
 
     //ignore r and return generated data 0.1 degree in each direction. 900 datapoints returned.
     @Override
-    public Measurements getMeasurements(Location l, double r, int maxCount) {
+    public Measurements getMeasurements(Location l, double r, long timestamp, int maxCount) {
         Measurements retValue = new Measurements();
         double radius = 0.1;
 

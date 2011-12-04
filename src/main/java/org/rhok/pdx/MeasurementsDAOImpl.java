@@ -7,6 +7,7 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.util.JSON;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class MeasurementsDAOImpl implements MeasurementsDAO {
@@ -19,10 +20,13 @@ public class MeasurementsDAOImpl implements MeasurementsDAO {
 
 
     @Override
-    public Measurements getMeasurements(Location l, double r, int maxCount) {
+    public Measurements getMeasurements(Location location, double range, long timestamp, int maxCount) {
 //        db.places.find( { loc : { $near : [50,50] , $maxDistance : 5 } } )
-        BasicDBObject query = new BasicDBObject("$near", Arrays.asList(l.getLat(), l.getLng()));
-        query.append("$maxDistance", 5);
+        BasicDBObject locObj = new BasicDBObject("lat", location.getLat()).append("lng", location.getLng());
+//        Object locObj = Arrays.asList(location.getLat(), location.getLng());
+        BasicDBObject near = new BasicDBObject("$near", locObj);
+        BasicDBObject query = new BasicDBObject("location", near);
+//        query.append("$maxDistance", range);
 
         DBCollection coll = mongoAccess.getCollection();
         DBCursor dbCursor = coll.find(query);
