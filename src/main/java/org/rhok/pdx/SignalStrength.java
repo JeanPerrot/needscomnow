@@ -1,7 +1,6 @@
 package org.rhok.pdx;
 
 import com.google.gson.Gson;
-import com.sun.xml.internal.bind.v2.TODO;
 import de.micromata.opengis.kml.v_2_2_0.*;
 import org.apache.log4j.Logger;
 import org.eclipse.jetty.server.Server;
