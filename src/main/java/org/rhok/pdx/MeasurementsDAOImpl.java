@@ -24,6 +24,9 @@ public class MeasurementsDAOImpl implements MeasurementsDAO {
         BasicDBObject near = new BasicDBObject("$near", locObj).append("$maxDistance", range);
         BasicDBObject query = new BasicDBObject("location", near);
 
+        BasicDBObject time = new BasicDBObject("$gt", timestamp);
+        query.append("timestamp", time);
+
         DBCollection coll = mongoAccess.getCollection();
         DBCursor dbCursor = coll.find(query).limit(maxCount);
         Measurements retValue = new Measurements();

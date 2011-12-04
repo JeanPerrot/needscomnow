@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Document>
+        <name>JAK Example1</name>
+        <open>1</open>
+        <Folder>
+            <name>testFolder</name>
+            <open>1</open>
+            <Placemark>
+                <name>London, UK</name>
+                <open>1</open>
+                <styleUrl>#testStyle</styleUrl>
+                <Style id="testStyle">
+                    <PolyStyle>
+                        <color>5f0000cc</color>
+                    </PolyStyle>
+                </Style>
+                <Polygon>
+                    <outerBoundaryIs>
+                        <LinearRing>
+                            <coordinates>-122.366278,37.818844 -122.365248,37.819267 -122.36564,37.819861 -122.366669,37.819429</coordinates>
+                        </LinearRing>
+                    </outerBoundaryIs>
+                </Polygon>
+            </Placemark>
+            <Placemark>
+                <name>London, UK</name>
+                <open>1</open>
+                <styleUrl>#testStyle</styleUrl>
+                <Style id="testStyle">
+                    <PolyStyle>
+                        <color>5f0000cc</color>
+                    </PolyStyle>
+                </Style>
+                <Polygon>
+                    <outerBoundaryIs>
+                        <LinearRing>
+                            <coordinates>-122.366378,37.828844 -122.335248,37.814267 -122.36564,37.819861 -122.366669,37.819429</coordinates>
+                        </LinearRing>
+                    </outerBoundaryIs>
+                </Polygon>
+            </Placemark>
+        </Folder>
+    </Document>
+</kml>

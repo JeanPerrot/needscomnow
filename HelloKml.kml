@@ -1,0 +1,17 @@
+    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Style>
+                <IconStyle id="somestyle">
+                    <color>ffcccccc</color>
+                          <colorMode>random</colorMode>
+                </IconStyle>
+            </Style>
+        <Placemark>
+            <name>London, UK</name>
+            <open>1</open>
+        <styleUrl>#someStyle</styleUrl>
+            <Point>
+                <coordinates>-0.126236,51.500152</coordinates>
+            </Point>
+        </Placemark>
+    </kml>

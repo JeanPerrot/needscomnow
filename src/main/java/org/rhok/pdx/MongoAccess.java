@@ -25,7 +25,7 @@ public class MongoAccess {
         MongoURI uri = new MongoURI(getMongoUrl());
         this.dbName = uri.getDatabase();
         mongo = getMongo();
-        logger.info("connection to mongo database " + dbName);
+        logger.info("connecting to mongo database " + dbName);
         db = mongo.getDB(dbName);
         db.authenticate(uri.getUsername(), uri.getPassword());
         setupDB();
@@ -74,7 +74,7 @@ public class MongoAccess {
         String url = null;
         System.getenv(MONGO_URL_PROP);
         if (url == null) {
-//            url = "mongodb://localhost/test";
+//            url = "mongodb://localhost/signalstrength";
             url = "mongodb://RhokPDX2011:rhok@staff.mongohq.com:10082/signalstrength";
         }
         logger.info("mongoDB url:" + url);

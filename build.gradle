@@ -25,6 +25,8 @@ dependencies {
         exclude group: 'com.sun.jmx', module: 'jmxri'
     }
 
+    compile 'de.micromata.jak:JavaAPIforKml:2.2.0'
+
     groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.8.2'
 
 }
