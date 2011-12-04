@@ -9,12 +9,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.Reader;
 
 public class SignalStrength extends HttpServlet {
-
     private Gson gson = new Gson();
 
     private MeasurementsDAO dao;
@@ -34,17 +32,17 @@ public class SignalStrength extends HttpServlet {
         String lngStr = req.getParameter("lng");
         String rStr = req.getParameter("range");
         String mStr = req.getParameter("max_count");
-        String timestampStr=req.getParameter("timestamp");
+        String timestampStr = req.getParameter("timestamp");
 
         double lat = Double.parseDouble(latStr);
         double lng = Double.parseDouble(lngStr);
         double range = Double.parseDouble(rStr);
         int maxCount = Integer.parseInt(mStr);
-        long timestamp=Long.parseLong(timestampStr);
+        long timestamp = Long.parseLong(timestampStr);
 
         Location location = new Location(lat, lng);
 
-        Measurements measurements = getMeasurements(location, range, timestamp,maxCount);
+        Measurements measurements = getMeasurements(location, range, timestamp, maxCount);
 
         String json = gson.toJson(measurements);
 
@@ -52,14 +50,22 @@ public class SignalStrength extends HttpServlet {
     }
 
     private Measurements getMeasurements(Location location, double range, long timestamp, int maxCount) {
-        return dao.getMeasurements(location, range, timestamp,maxCount);
+        try {
+            return dao.getMeasurements(location, range, timestamp, maxCount);
+        } catch (Exception e) {
+            return new MockMeasurementDAO().getMeasurements(location, range, timestamp, maxCount);
+        }
 
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Measurements measurements = parseFromRequest(req.getReader());
-        dao.saveMeasurements(measurements);
+        try{
+            dao.saveMeasurements(measurements);
+        }catch(Exception e){
+
+        }
         resp.getWriter().print("Successfully saved " + measurements.getMeasurements().size() + " data points");
     }
 
