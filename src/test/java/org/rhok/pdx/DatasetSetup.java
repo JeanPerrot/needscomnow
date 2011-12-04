@@ -15,7 +15,7 @@ public class DatasetSetup {
         double beginLng = 0;
         double beginLat = 45;
 
-        double range = 0.05;
+        double range = 0.0005;
 
         int intervals = 30;
 
@@ -24,8 +24,10 @@ public class DatasetSetup {
                 double lat = beginLat + ((double) i) / intervals * range;
                 double lng = beginLng + ((double) j) / intervals * range;
 
-
-                int signal = (int) (1/Math.sqrt(0.1+(lat - beginLat) * (lat - beginLat) + (lng - beginLng) * (lng - beginLng)));
+                double max = 100;
+                double radius = 0.0001;
+                double distance = Math.sqrt((lat - beginLat) * (lat - beginLat) + (lng - beginLng) * (lng - beginLng));
+                int signal = (int) (1 / (1 / max * max) + 10 * distance / radius);
                 int wifi = 0;
 
                 measurements.add(lat, lng, signal, wifi, System.currentTimeMillis());

@@ -76,10 +76,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SignalStrength.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SignalStrength.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="75" selection-start="2618" selection-end="2618" vertical-scroll-proportion="0.2034384">
+            <state line="53" column="48" selection-start="1376" selection-end="1724" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MongoAccess.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MongoAccess.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="75" column="21" selection-start="2280" selection-end="2280" vertical-scroll-proportion="0.40789473">
               <folding />
             </state>
           </provider>
@@ -88,81 +97,16 @@
       <file leaf-file-name="DatasetSetup.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/org/rhok/pdx/DatasetSetup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="33" selection-start="992" selection-end="992" vertical-scroll-proportion="0.0">
+            <state line="22" column="29" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MeasurementsDAOImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MeasurementsDAOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="0" selection-start="1643" selection-end="1643" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MockMeasurementDAO.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MockMeasurementDAO.java">
+      <file leaf-file-name="Location.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/Location.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="2" column="13" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MongoAccess.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MongoAccess.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="36" selection-start="2243" selection-end="2243" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KmlTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/org/rhok/pdx/KmlTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="57" selection-start="1731" selection-end="1927" vertical-scroll-proportion="-6.230769">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Point.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/cache/de.micromata.jak/JavaAPIforKml/sources/JavaAPIforKml-2.2.0-sources.jar!/de/micromata/opengis/kml/v_2_2_0/Point.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="469" column="62" selection-start="14711" selection-end="14711" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HelloKml.kml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HelloKml.kml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="20" selection-start="4" selection-end="712" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Kml.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/cache/de.micromata.jak/JavaAPIforKml/sources/JavaAPIforKml-2.2.0-sources.jar!/de/micromata/opengis/kml/v_2_2_0/Kml.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="581" column="34" selection-start="18853" selection-end="18853" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Feature.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/cache/de.micromata.jak/JavaAPIforKml/sources/JavaAPIforKml-2.2.0-sources.jar!/de/micromata/opengis/kml/v_2_2_0/Feature.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="22" selection-start="3804" selection-end="3804" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -178,7 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrengthTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/DataPoint.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/Measurements.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/MockMeasurementDAO.java" />
@@ -191,9 +134,10 @@
         <option value="$PROJECT_DIR$/HelloKml.kml" />
         <option value="$PROJECT_DIR$/src/test/java/org/rhok/pdx/TestSetSetup.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/rhok/pdx/KmlTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/Location.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/rhok/pdx/DatasetSetup.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/MongoAccess.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/MongoAccess.java" />
       </list>
     </option>
   </component>
@@ -640,14 +584,14 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5842105" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.46184212" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924472" sideWeight="0.425" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924472" sideWeight="0.5381579" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.36052632" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.575" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -704,13 +648,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="65" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/cache/de.micromata.jak/JavaAPIforKml/sources/JavaAPIforKml-2.2.0-sources.jar!/de/micromata/opengis/kml/v_2_2_0/Placemark.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="607" column="19" selection-start="18184" selection-end="18184" vertical-scroll-proportion="-12.884615">
@@ -797,23 +734,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/rhok/pdx/DatasetSetup.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/Location.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="33" selection-start="992" selection-end="992" vertical-scroll-proportion="0.0">
+        <state line="2" column="13" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MongoAccess.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/rhok/pdx/DatasetSetup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="36" selection-start="2243" selection-end="2243" vertical-scroll-proportion="0.0">
+        <state line="22" column="29" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="75" selection-start="2618" selection-end="2618" vertical-scroll-proportion="0.2034384">
+        <state line="53" column="48" selection-start="1376" selection-end="1724" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MongoAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="21" selection-start="2280" selection-end="2280" vertical-scroll-proportion="0.40789473">
           <folding />
         </state>
       </provider>

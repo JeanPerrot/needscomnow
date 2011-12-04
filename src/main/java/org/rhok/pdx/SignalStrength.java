@@ -1,6 +1,7 @@
 package org.rhok.pdx;
 
 import com.google.gson.Gson;
+import com.sun.xml.internal.bind.v2.TODO;
 import de.micromata.opengis.kml.v_2_2_0.*;
 import org.apache.log4j.Logger;
 import org.eclipse.jetty.server.Server;
@@ -14,11 +15,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignalStrength extends HttpServlet {
     private static Logger logger = Logger.getLogger(SignalStrength.class);
     public static final double DEFAULT_RANGE = 0.1;
-    public static final int DEFAULT_MAX_COUNT = 1000;
+    public static final int DEFAULT_MAX_COUNT = Integer.MAX_VALUE;
     public static final int DEFAULT_TIMESTAMP = -1;
 
     private Gson gson = new Gson();
@@ -82,16 +87,18 @@ public class SignalStrength extends HttpServlet {
         String contentType = req.getContentType();
 //        contentType = "kml";
         if (contentType != null && contentType.toLowerCase().contains("kml")) {
-            doGetKml(resp, measurements);
+            doGetKml(resp, measurements, params);
         } else {
             doGetJson(resp, measurements);
         }
     }
 
-    private void doGetKml(HttpServletResponse resp, Measurements measurements) throws IOException {
+    private void doGetKml(HttpServletResponse resp, Measurements measurements, RequestParams params) throws IOException {
         final Kml kml = new Kml();
 
-        double tickerWidth = 0.0001;
+        //TODO - absolute scale of cell phone intensity
+        double maxIntensity = getMaxIntensity(measurements);
+        int divisions = 50;
 
 
         Document doc = kml.createAndSetDocument().withName("signal strength map").withOpen(true);
@@ -99,32 +106,91 @@ public class SignalStrength extends HttpServlet {
         Folder folder = doc.createAndAddFolder();
         folder.withName("strength tiles").withOpen(true);
 
-        for (DataPoint datapoint : measurements.getMeasurements()) {
+        Location topLeft = new Location(params.latitude - params.range, params.longitude - params.range);
+        Location bottomRight = new Location(params.latitude + params.range, params.longitude + params.range);
+        Map<Location, Collection<DataPoint>> bins = getBins(measurements, topLeft, bottomRight, divisions);
 
-            int someNumber = ((int) datapoint.getSignal()) % 256;
+        double widthInc = (bottomRight.getLng() - topLeft.getLng()) / divisions;
+        double heightInc = (bottomRight.getLat() - topLeft.getLat()) / divisions;
+        int index = 0;
+        for (Map.Entry<Location, Collection<DataPoint>> entry : bins.entrySet()) {
+
+            int signal = average(entry.getValue());
+
+            int someNumber = (int) ((((double) signal) / maxIntensity) * 255);
             String color = Integer.toHexString(someNumber);
-            Style style = polygonStyle("0000" + color, "testStyle" + color);
-            double lat = datapoint.getLocation().getLat();
-            double lng = datapoint.getLocation().getLng();
+            String styleId = "testStyle" + color + "_" + index;
+            Style style = polygonStyle("14" + color + "ff", styleId);
+
+            double lat = entry.getKey().getLat() + heightInc / 2;
+            double lng = entry.getKey().getLng() + widthInc / 2;
 
             folder.createAndAddPlacemark().addToStyleSelector(style).withStyleUrl(style.getId())
-                    .withOpen(Boolean.TRUE)
+                    .withOpen(Boolean.FALSE)
                     .createAndSetPolygon()
                     .createAndSetOuterBoundaryIs()
                     .withLinearRing(
                             new LinearRing()
-                                    .addToCoordinates(lng - tickerWidth, lat - tickerWidth)
-                                    .addToCoordinates(lng + tickerWidth, lat - tickerWidth)
-                                    .addToCoordinates(lng + tickerWidth, lat + tickerWidth)
-                                    .addToCoordinates(lng - tickerWidth, lat + tickerWidth));
+                                    .addToCoordinates(lng - widthInc, lat - heightInc)
+                                    .addToCoordinates(lng + widthInc, lat - heightInc)
+                                    .addToCoordinates(lng + widthInc, lat + heightInc)
+                                    .addToCoordinates(lng - widthInc, lat + heightInc));
 
         }
         kml.marshal(resp.getOutputStream());
     }
 
+    private double getMaxIntensity(Measurements measurements) {
+        double max = -1;
+        for (DataPoint dataPoint : measurements.getMeasurements()) {
+            if (dataPoint.getSignal() > max)
+                max = dataPoint.getSignal();
+        }
+        return max;
+    }
+
+    private int average(Collection<DataPoint> value) {
+        int total = 0;
+        for (DataPoint dataPoint : value) {
+            total += dataPoint.getSignal();
+        }
+        return total / value.size();
+    }
+
+    //TODO move somewhere else
+    private Map<Location, Collection<DataPoint>> getBins(Measurements measurement, Location topLeft, Location bottomRight, int divisions) {
+        Map<Location, Collection<DataPoint>> retValue = new HashMap<Location, Collection<DataPoint>>();
+
+        for (DataPoint dataPoint : measurement.getMeasurements()) {
+            Location key = getKey(dataPoint.getLocation(), topLeft, bottomRight, divisions);
+            Collection<DataPoint> dataPoints = retValue.get(key);
+            if (dataPoints == null) {
+                dataPoints = new ArrayList<DataPoint>();
+                retValue.put(key, dataPoints);
+            }
+            dataPoints.add(dataPoint);
+        }
+
+        return retValue;
+    }
+
+    private Location getKey(Location location, Location topLeft, Location bottomRight, int divisions) {
+        double lat = topLeft.getLat();
+        double lng = topLeft.getLng();
+
+        double widthInc = (bottomRight.getLng() - lng) / divisions;
+        double heightInc = (bottomRight.getLat() - lat) / divisions;
+
+        int x = (int) ((location.getLng() - lng) / widthInc);
+        int y = (int) ((location.getLat() - lat) / heightInc);
+
+        return new Location(lat + y * widthInc, lng + x * heightInc);
+    }
+
+
     private Style polygonStyle(String rgb, String id) {
         Style style = new Style();
-        style.createAndSetPolyStyle().withColor("5f" + rgb).withOutline(false);
+        style.createAndSetPolyStyle().withColor("50" + rgb).withOutline(false);
         style.setId(id);
         return style;
     }
