@@ -11,7 +11,7 @@ import java.util.List;
 public class MongoAccess {
     private static Logger logger = Logger.getLogger(MongoAccess.class);
 
-    public static final String DB_NAME = "signalstrength";
+    //    public static final String DB_NAME = "signalstrength";
     public static final String MONGO_URL_PROP = "MONGOHQ_URL";
     public static final String MEASUREMENTS = "measurements";
     public static final int COLLECTION_EXISTS = -5;
@@ -21,16 +21,16 @@ public class MongoAccess {
     private DB db;
 
 
-    public MongoAccess(String dbName) {
-        this.dbName = dbName;
+    public MongoAccess() {
+        this.dbName = "app1930625";
         mongo = getMongo();
         db = mongo.getDB(dbName);
         setupDB();
     }
 
-    public MongoAccess() {
-        this(DB_NAME);
-    }
+//    public MongoAccess() {
+//        this(DB_NAME);
+//    }
 
     //ensure that the collection is indexed for geolocation queries
     public void setupDB() {
@@ -69,7 +69,7 @@ public class MongoAccess {
     private String getMongoUrl() {
         String url = System.getenv(MONGO_URL_PROP);
         if (url == null) {
-            url = "mongodb://localhost";
+            url = "mongodb://localhost/test";
 //            url = "mongodb://heroku:c4c2456aeb4cde611002d26834329dc1@staff.mongohq.com:10077/app1930625";
         }
         logger.info("mongoDB url:" + url);

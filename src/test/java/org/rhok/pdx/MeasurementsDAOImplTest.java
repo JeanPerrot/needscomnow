@@ -18,7 +18,7 @@ public class MeasurementsDAOImplTest {
 
     @Before
     public void setup() {
-        access = new MongoAccess("test");
+        access = new MongoAccess();
         access.getCollection().drop();
         access.setupDB();
         dao = new MeasurementsDAOImpl();
