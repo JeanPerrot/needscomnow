@@ -68,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SignalStrength.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SignalStrength.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="24" selection-start="2322" selection-end="2322" vertical-scroll-proportion="0.0">
+            <state line="28" column="65" selection-start="940" selection-end="940" vertical-scroll-proportion="0.2278481">
               <folding />
             </state>
           </provider>
@@ -80,16 +80,38 @@
       <file leaf-file-name="MeasurementsDAO.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MeasurementsDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="14" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0">
+            <state line="4" column="14" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MeasurementsDAOImpl.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MeasurementsDAOImpl.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MeasurementsDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="80" selection-start="1564" selection-end="1564" vertical-scroll-proportion="1.0100286">
+            <state line="11" column="24" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MeasurementsDAOImplTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/rhok/pdx/MeasurementsDAOImplTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="80" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MongoAccess.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MongoAccess.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="27" selection-start="491" selection-end="491" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -100,7 +122,7 @@
       <file leaf-file-name="MockMeasurementDAO.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MockMeasurementDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="0" selection-start="959" selection-end="959" vertical-scroll-proportion="0.0">
+            <state line="33" column="0" selection-start="973" selection-end="973" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -141,12 +163,14 @@
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/Location.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrengthTest.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/DataPoint.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/Measurements.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/MeasurementsDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/MockMeasurementDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/MeasurementsDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/MongoAccess.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/rhok/pdx/MeasurementsDAOImplTest.java" />
       </list>
     </option>
   </component>
@@ -603,13 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="24" selection-start="2322" selection-end="2322" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/Measurements.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="32" selection-start="402" selection-end="402" vertical-scroll-proportion="0.0">
@@ -626,24 +643,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MockMeasurementDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="959" selection-end="959" vertical-scroll-proportion="0.0">
+        <state line="33" column="0" selection-start="973" selection-end="973" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MeasurementsDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="14" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0">
+        <state line="4" column="14" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MongoAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="27" selection-start="491" selection-end="491" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MeasurementsDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="80" selection-start="1564" selection-end="1564" vertical-scroll-proportion="1.0100286">
+        <state line="11" column="24" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/rhok/pdx/MeasurementsDAOImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="80" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="65" selection-start="940" selection-end="940" vertical-scroll-proportion="0.2278481">
+          <folding />
         </state>
       </provider>
     </entry>

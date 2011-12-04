@@ -24,23 +24,25 @@ public class SignalStrength extends HttpServlet {
             throws ServletException, IOException {
         String latStr = req.getParameter("lat");
         String lngStr = req.getParameter("lng");
-        String rStr = req.getParameter("r");
+        String rStr = req.getParameter("range");
+        String mStr = req.getParameter("max_count");
 
-        double lat = Integer.parseInt(latStr);
-        double lng = Integer.parseInt(lngStr);
-        double r = Integer.parseInt(rStr);
+        double lat = Double.parseDouble(latStr);
+        double lng = Double.parseDouble(lngStr);
+        double range = Double.parseDouble(rStr);
+        int maxCount = Integer.parseInt(mStr);
 
-        Location l = new Location(lat, lng);
+        Location location = new Location(lat, lng);
 
-        Measurements measurements = getMeasurements(l, r);
+        Measurements measurements = getMeasurements(location, range, maxCount);
 
         String json = gson.toJson(measurements);
 
         resp.getWriter().print(json);
     }
 
-    private Measurements getMeasurements(Location l, double r) {
-        return dao.getMeasurements(l, r);
+    private Measurements getMeasurements(Location location, double range, int maxCount) {
+        return dao.getMeasurements(location, range, maxCount);
 
     }
 
