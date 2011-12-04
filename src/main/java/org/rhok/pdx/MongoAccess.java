@@ -22,11 +22,11 @@ public class MongoAccess {
 
 
     public MongoAccess() {
-        this.dbName = "signalstrength";
+        MongoURI uri = new MongoURI(getMongoUrl());
+        this.dbName = uri.getDatabase();
         mongo = getMongo();
         logger.info("connection to mongo database " + dbName);
         db = mongo.getDB(dbName);
-        MongoURI uri = new MongoURI(getMongoUrl());
         db.authenticate(uri.getUsername(), uri.getPassword());
         setupDB();
     }
@@ -71,7 +71,8 @@ public class MongoAccess {
 
     //TODO - externalize
     private String getMongoUrl() {
-        String url = System.getenv(MONGO_URL_PROP);
+        String url = null;
+        System.getenv(MONGO_URL_PROP);
         if (url == null) {
 //            url = "mongodb://localhost/test";
             url = "mongodb://RhokPDX2011:rhok@staff.mongohq.com:10082/signalstrength";
