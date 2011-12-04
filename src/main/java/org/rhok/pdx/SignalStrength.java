@@ -1,6 +1,8 @@
 package org.rhok.pdx;
 
 import com.google.gson.Gson;
+import org.apache.log4j.Logger;
+import org.apache.log4j.spi.LoggerRepository;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
@@ -13,6 +15,8 @@ import java.io.IOException;
 import java.io.Reader;
 
 public class SignalStrength extends HttpServlet {
+    private static Logger logger = Logger.getLogger(SignalStrength.class);
+
     private Gson gson = new Gson();
 
     private MeasurementsDAO dao;
@@ -86,7 +90,8 @@ public class SignalStrength extends HttpServlet {
             server.start();
             server.join();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("error during initialization, shutting down", e);
+            throw e;
         }
     }
 

@@ -20,6 +20,10 @@ dependencies {
     compile 'javax.servlet:servlet-api:2.5'
     compile 'org.mongodb:mongo-java-driver:2.7.2'
     compile 'com.google.code.gson:gson:2.0'
+    compile('log4j:log4j:1.2.15') {
+        exclude group: 'com.sun.jdmk', module: 'jmxtools'
+        exclude group: 'com.sun.jmx', module: 'jmxri'
+    }
 
     groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.8.2'
 

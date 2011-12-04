@@ -2,11 +2,13 @@ package org.rhok.pdx;
 
 import com.mongodb.*;
 import com.mongodb.util.JSON;
+import org.apache.log4j.Logger;
 
 import java.net.UnknownHostException;
 import java.util.List;
 
 public class MongoAccess {
+    private static Logger logger = Logger.getLogger(MongoAccess.class);
 
     public static final String DB_NAME = "signalstrength";
     public static final String MONGO_URL_PROP = "MONGOHQ_URL";
@@ -66,6 +68,7 @@ public class MongoAccess {
         if (url == null) {
             url = "localhost";
         }
+        logger.info("mongoDB url:" + url);
         return url;
     }
 
