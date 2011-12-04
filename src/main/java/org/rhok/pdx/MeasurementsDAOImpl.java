@@ -15,21 +15,17 @@ public class MeasurementsDAOImpl implements MeasurementsDAO {
     private MongoAccess mongoAccess;
     private Gson gson = new Gson();
 
-    public MeasurementsDAOImpl() {
-    }
-
 
     @Override
     public Measurements getMeasurements(Location location, double range, long timestamp, int maxCount) {
-//        db.places.find( { loc : { $near : [50,50] , $maxDistance : 5 } } )
+//      example query:
+//      db.places.find( { loc : { $near : [50,50] , $maxDistance : 5 } } ).limit(20)
         BasicDBObject locObj = new BasicDBObject("lat", location.getLat()).append("lng", location.getLng());
-//        Object locObj = Arrays.asList(location.getLat(), location.getLng());
-        BasicDBObject near = new BasicDBObject("$near", locObj);
+        BasicDBObject near = new BasicDBObject("$near", locObj).append("$maxDistance", range);
         BasicDBObject query = new BasicDBObject("location", near);
-//        query.append("$maxDistance", range);
 
         DBCollection coll = mongoAccess.getCollection();
-        DBCursor dbCursor = coll.find(query);
+        DBCursor dbCursor = coll.find(query).limit(maxCount);
         Measurements retValue = new Measurements();
         while (dbCursor.hasNext()) {
             DBObject obj = dbCursor.next();

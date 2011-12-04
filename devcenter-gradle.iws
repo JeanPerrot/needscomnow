@@ -59,94 +59,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SignalStrength.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="64" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServletHolder.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/cache/org.eclipse.jetty/jetty-servlet/sources/jetty-servlet-7.5.3.v20111011-sources.jar!/org/eclipse/jetty/servlet/ServletHolder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="556" column="0" selection-start="16596" selection-end="16596" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MeasurementsDAO.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MeasurementsDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MongoAccess.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MongoAccess.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="50" selection-start="902" selection-end="902" vertical-scroll-proportion="0.48523206">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MongoAccessTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/org/rhok/pdx/MongoAccessTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="896" selection-end="896" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReflectiveCallable.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/cache/junit/junit/sources/junit-4.8.2-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBAddress.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/cache/org.mongodb/mongo-java-driver/sources/mongo-java-driver-2.7.2-sources.jar!/com/mongodb/DBAddress.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="0" selection-start="1387" selection-end="1387" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Mongo.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/cache/org.mongodb/mongo-java-driver/sources/mongo-java-driver-2.7.2-sources.jar!/com/mongodb/Mongo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="262" column="11" selection-start="8838" selection-end="8838" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServerAddress.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/cache/org.mongodb/mongo-java-driver/sources/mongo-java-driver-2.7.2-sources.jar!/com/mongodb/ServerAddress.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="0" selection-start="1327" selection-end="1327" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MeasurementsDAOImpl.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MeasurementsDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="69" selection-start="1112" selection-end="1112" vertical-scroll-proportion="0.0">
+            <state line="22" column="86" selection-start="717" selection-end="717" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MongoAccess.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MongoAccess.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="83" selection-start="1645" selection-end="1645" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignalStrength.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="68" selection-start="896" selection-end="896" vertical-scroll-proportion="0.98734176">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -170,13 +107,13 @@
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/Measurements.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/MockMeasurementDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/MeasurementsDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/MeasurementsDAOImpl.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.xml" />
         <option value="$PROJECT_DIR$/src/test/java/org/rhok/pdx/MeasurementsDAOImplTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/rhok/pdx/MongoAccessTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/MongoAccess.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/MeasurementsDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java" />
       </list>
     </option>
   </component>
@@ -624,7 +561,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="22" width="1373" height="878" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -639,7 +576,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924472" sideWeight="0.55789477" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44210526" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.44210526" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -743,13 +680,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MeasurementsDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="69" selection-start="1112" selection-end="1112" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/cache/org.mongodb/mongo-java-driver/sources/mongo-java-driver-2.7.2-sources.jar!/com/mongodb/ServerAddress.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="47" column="0" selection-start="1327" selection-end="1327" vertical-scroll-proportion="0.0">
@@ -787,17 +717,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MeasurementsDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="64" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0">
+        <state line="22" column="86" selection-start="717" selection-end="717" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MongoAccess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="50" selection-start="902" selection-end="902" vertical-scroll-proportion="0.48523206">
+        <state line="56" column="83" selection-start="1645" selection-end="1645" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="68" selection-start="896" selection-end="896" vertical-scroll-proportion="0.98734176">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
