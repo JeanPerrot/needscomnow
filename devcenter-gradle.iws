@@ -62,7 +62,7 @@
       <file leaf-file-name="SignalStrength.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="74" selection-start="469" selection-end="469" vertical-scroll-proportion="0.2872777">
+            <state line="89" column="32" selection-start="3183" selection-end="3183" vertical-scroll-proportion="0.73324215">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -317,7 +317,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MeasurementsDAOImplTest">
+  <component name="RunManager" selected="Application.SignalStrength">
     <configuration default="false" name="SignalStrengthTest" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" />
       <module name="devcenter-gradle" />
@@ -415,7 +415,9 @@
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
     <configuration default="false" name="MeasurementsDAOImplTest.testRead" type="JUnit" factoryName="JUnit" temporary="true">
@@ -739,7 +741,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="74" selection-start="469" selection-end="469" vertical-scroll-proportion="0.2872777">
+        <state line="89" column="32" selection-start="3183" selection-end="3183" vertical-scroll-proportion="0.73324215">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

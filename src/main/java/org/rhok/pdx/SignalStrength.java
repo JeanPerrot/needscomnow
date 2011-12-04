@@ -61,9 +61,9 @@ public class SignalStrength extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Measurements measurements = parseFromRequest(req.getReader());
-        try{
+        try {
             dao.saveMeasurements(measurements);
-        }catch(Exception e){
+        } catch (Exception e) {
 
         }
         resp.getWriter().print("Successfully saved " + measurements.getMeasurements().size() + " data points");
@@ -76,14 +76,18 @@ public class SignalStrength extends HttpServlet {
 
 
     public static void main(String[] args) throws Exception {
-        Integer port = getPort();
-        Server server = new Server(port);
-        ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-        context.setContextPath("/");
-        server.setHandler(context);
-        context.addServlet(new ServletHolder(new SignalStrength()), "/*");
-        server.start();
-        server.join();
+        try {
+            Integer port = getPort();
+            Server server = new Server(port);
+            ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
+            context.setContextPath("/");
+            server.setHandler(context);
+            context.addServlet(new ServletHolder(new SignalStrength()), "/*");
+            server.start();
+            server.join();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     //TODO - externalize
