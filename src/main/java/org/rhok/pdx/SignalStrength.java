@@ -9,13 +9,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.Reader;
 
 public class SignalStrength extends HttpServlet {
 
     private Gson gson = new Gson();
 
-    private MeasurementsDAO dao=new MockMeasurementDAO();
+    private MeasurementsDAO dao = new MockMeasurementDAO();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -44,7 +46,13 @@ public class SignalStrength extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().print("This is still a mock!");
+        Measurements measurements = parseFromRequest(req.getReader());
+        resp.getWriter().print("Request was successfully parsed, but this is still a mock!");
+    }
+
+    protected Measurements parseFromRequest(Reader reader) throws IOException {
+        Measurements measurements = gson.fromJson(reader, Measurements.class);
+        return measurements;
     }
 
     public static void main(String[] args) throws Exception {

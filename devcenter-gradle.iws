@@ -59,19 +59,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="build.gradle" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="60" selection-start="164" selection-end="164" vertical-scroll-proportion="0.28074867">
+            <state line="13" column="57" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SignalStrength.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SignalStrength.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="57" selection-start="543" selection-end="543" vertical-scroll-proportion="0.0">
+            <state line="49" column="55" selection-start="1593" selection-end="1593" vertical-scroll-proportion="0.37700534">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignalStrengthTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrengthTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="8" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -154,9 +165,10 @@
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/MeasurementsDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/MeasurementsDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/MockMeasurementDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/Measurements.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrengthTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java" />
       </list>
     </option>
   </component>
@@ -229,15 +241,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pdx" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -258,6 +262,14 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pdx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -265,20 +277,26 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="OverrideImplement.combined" value="true" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="recentsLimit" value="5" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLanguage" value="Java" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="project.structure.side.proportion" value="0.2" />
     <property name="dynamic.classpath" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.rhok.pdx" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.rhok.pdx" />
     </key>
@@ -286,7 +304,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SignalStrength">
+  <component name="RunManager" selected="JUnit.SignalStrengthTest">
     <configuration default="false" name="SignalStrength" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" />
       <option name="MAIN_CLASS_NAME" value="org.rhok.pdx.SignalStrength" />
@@ -300,7 +318,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="devcenter-gradle" />
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52821" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -319,6 +343,56 @@
       <envs />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="SignalStrengthTest.testJson" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" />
+      <module name="devcenter-gradle" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.rhok.pdx" />
+      <option name="MAIN_CLASS_NAME" value="org.rhok.pdx.SignalStrengthTest" />
+      <option name="METHOD_NAME" value="testJson" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="SignalStrengthTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" />
+      <module name="devcenter-gradle" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.rhok.pdx" />
+      <option name="MAIN_CLASS_NAME" value="org.rhok.pdx.SignalStrengthTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52827" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -397,9 +471,11 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <list size="2">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.SignalStrength" />
       <item index="1" class="java.lang.String" itemvalue="Application.HelloWorld" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.SignalStrengthTest.testJson" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.SignalStrengthTest" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -552,19 +628,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="57" selection-start="543" selection-end="543" vertical-scroll-proportion="0.0">
+        <state line="13" column="57" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/cache/com.google.code.gson/gson/sources/gson-2.0-sources.jar!/com/google/gson/Gson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="657" column="15" selection-start="29992" selection-end="29992" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrengthTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="8" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="60" selection-start="164" selection-end="164" vertical-scroll-proportion="0.28074867">
-          <folding />
+        <state line="49" column="55" selection-start="1593" selection-end="1593" vertical-scroll-proportion="0.37700534">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
