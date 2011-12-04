@@ -2,7 +2,6 @@ package org.rhok.pdx;
 
 import com.google.gson.Gson;
 import org.apache.log4j.Logger;
-import org.apache.log4j.spi.LoggerRepository;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
@@ -59,6 +58,7 @@ public class SignalStrength extends HttpServlet {
         try {
             return dao.getMeasurements(location, range, timestamp, maxCount);
         } catch (Exception e) {
+            logger.error(e);
             return new MockMeasurementDAO().getMeasurements(location, range, timestamp, maxCount);
         }
 

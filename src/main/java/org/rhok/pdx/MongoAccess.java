@@ -22,10 +22,12 @@ public class MongoAccess {
 
 
     public MongoAccess() {
-        this.dbName = "app1930625";
+        this.dbName = "signalstrength";
         mongo = getMongo();
         logger.info("connection to mongo database " + dbName);
         db = mongo.getDB(dbName);
+        MongoURI uri = new MongoURI(getMongoUrl());
+        db.authenticate(uri.getUsername(), uri.getPassword());
         setupDB();
     }
 
@@ -71,8 +73,8 @@ public class MongoAccess {
     private String getMongoUrl() {
         String url = System.getenv(MONGO_URL_PROP);
         if (url == null) {
-            url = "mongodb://localhost/test";
-//            url = "mongodb://heroku:c4c2456aeb4cde611002d26834329dc1@staff.mongohq.com:10077/app1930625";
+//            url = "mongodb://localhost/test";
+            url = "mongodb://RhokPDX2011:rhok@staff.mongohq.com:10082/signalstrength";
         }
         logger.info("mongoDB url:" + url);
         return url;
