@@ -56,14 +56,7 @@ public class MongoAccess {
         String url = getMongoUrl();
         Mongo mongo = null;
         try {
-            URI uri = new URI(url);
-            String host = uri.getHost();
-            int port = uri.getPort();
-            if (port == -1) {
-                mongo = new Mongo(host);
-            } else {
-                mongo = new Mongo(host, port);
-            }
+            mongo = new Mongo(new MongoURI(url));
             return mongo;
         } catch (Exception e) {
             //can't find Mongo, die.
@@ -75,7 +68,8 @@ public class MongoAccess {
     private String getMongoUrl() {
         String url = System.getenv(MONGO_URL_PROP);
         if (url == null) {
-            url = "localhost";
+            url = "mongodb://localhost";
+//            url = "mongodb://heroku:c4c2456aeb4cde611002d26834329dc1@staff.mongohq.com:10077/app1930625";
         }
         logger.info("mongoDB url:" + url);
         return url;
