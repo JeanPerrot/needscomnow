@@ -79,7 +79,7 @@
       <file leaf-file-name="SignalStrength.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="30" selection-start="2933" selection-end="2933" vertical-scroll-proportion="0.4641834">
+            <state line="77" column="75" selection-start="2618" selection-end="2618" vertical-scroll-proportion="0.2034384">
               <folding />
             </state>
           </provider>
@@ -813,7 +813,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/SignalStrength.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="30" selection-start="2933" selection-end="2933" vertical-scroll-proportion="0.4641834">
+        <state line="77" column="75" selection-start="2618" selection-end="2618" vertical-scroll-proportion="0.2034384">
           <folding />
         </state>
       </provider>

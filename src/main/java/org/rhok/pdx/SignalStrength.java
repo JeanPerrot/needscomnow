@@ -81,7 +81,7 @@ public class SignalStrength extends HttpServlet {
 
         String contentType = req.getContentType();
 //        contentType = "kml";
-        if (contentType.toLowerCase().contains("kml")) {
+        if (contentType != null && contentType.toLowerCase().contains("kml")) {
             doGetKml(resp, measurements);
         } else {
             doGetJson(resp, measurements);
