@@ -72,6 +72,8 @@ public class MongoAccess {
     //TODO - externalize
     private String getMongoUrl() {
         String url = System.getenv(MONGO_URL_PROP);
+        //TODO - remove that after demo...
+        url=null;
         if (url == null) {
 //            url = "mongodb://localhost/signalstrength";
             url = "mongodb://RhokPDX2011:rhok@staff.mongohq.com:10082/signalstrength";
