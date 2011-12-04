@@ -4,6 +4,7 @@ import com.mongodb.*;
 import com.mongodb.util.JSON;
 import org.apache.log4j.Logger;
 
+import java.net.URI;
 import java.net.UnknownHostException;
 import java.util.List;
 
@@ -53,10 +54,18 @@ public class MongoAccess {
 
     private synchronized Mongo getMongo() {
         String url = getMongoUrl();
+        Mongo mongo = null;
         try {
-            Mongo mongo = new Mongo(url);
+            URI uri = new URI(url);
+            String host = uri.getHost();
+            int port = uri.getPort();
+            if (port == -1) {
+                mongo = new Mongo(host);
+            } else {
+                mongo = new Mongo(host, port);
+            }
             return mongo;
-        } catch (UnknownHostException e) {
+        } catch (Exception e) {
             //can't find Mongo, die.
             throw new RuntimeException(e);
         }
