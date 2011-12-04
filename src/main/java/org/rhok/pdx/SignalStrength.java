@@ -90,8 +90,8 @@ public class SignalStrength extends HttpServlet {
             server.start();
             server.join();
         } catch (Exception e) {
-            logger.error("error during initialization, shutting down", e);
-            throw e;
+            logger.error("error during initialization", e);
+            e.printStackTrace();
         }
     }
 
