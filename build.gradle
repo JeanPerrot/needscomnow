@@ -14,7 +14,7 @@ repositories {
 
 dependencies {
 
-    test 'junit:junit:4.8.2'
+    testCompile 'junit:junit:4.8.2'
     compile 'org.eclipse.jetty:jetty-servlet:7.5.3.v20111011'
 
     compile 'javax.servlet:servlet-api:2.5'
