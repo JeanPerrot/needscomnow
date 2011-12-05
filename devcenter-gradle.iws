@@ -90,7 +90,7 @@
       <file leaf-file-name="MongoAccess.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MongoAccess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="42" selection-start="2274" selection-end="2274" vertical-scroll-proportion="0.67168266">
+            <state line="38" column="83" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.65663475">
               <folding />
             </state>
           </provider>
@@ -761,7 +761,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/rhok/pdx/MongoAccess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="42" selection-start="2274" selection-end="2274" vertical-scroll-proportion="0.67168266">
+        <state line="38" column="83" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.65663475">
           <folding />
         </state>
       </provider>
