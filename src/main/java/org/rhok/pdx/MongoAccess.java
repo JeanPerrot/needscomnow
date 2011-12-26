@@ -27,7 +27,9 @@ public class MongoAccess {
         mongo = getMongo();
         logger.info("connecting to mongo database " + dbName);
         db = mongo.getDB(dbName);
-        db.authenticate(uri.getUsername(), uri.getPassword());
+        if (uri.getUsername()!=null){
+            db.authenticate(uri.getUsername(), uri.getPassword());
+        }
         setupDB();
     }
 

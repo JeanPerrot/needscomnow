@@ -4,6 +4,8 @@ import org.junit.Test;
 
 public class DatasetSetup {
 
+    //TODO - this should spin MongoDB up and down.
+
     @Test
     public void setup() {
         MongoAccess mongoAccess = new MongoAccess();
