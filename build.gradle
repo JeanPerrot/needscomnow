@@ -1,12 +1,16 @@
-apply plugin: 'idea'
-apply plugin: 'groovy'
 apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'idea'
 apply plugin: 'application'
 
 mainClassName = "org.rhok.pdx.SignalStrength"
 applicationName = "app"
 
-sourceCompatibility = "1.6"
+sourceCompatibility=1.6
+ideaProject{
+  javaVersion = '1.6'
+}
+
 
 repositories {
     mavenCentral()
