@@ -7,7 +7,7 @@ class SignalGrafiti {
 
 
     def serve() {
-        Graffiti.config['port'] = 8111
+        Graffiti.config['port'] = getPort()
         Graffiti.root "./src/main/resources/"
         Graffiti.serve '*.html'
         Graffiti.serve this
@@ -22,5 +22,15 @@ class SignalGrafiti {
 
     public static void main(String[] args) {
         new SignalGrafiti().serve()
+    }
+
+    private Integer getPort() {
+        Integer port = null;
+        try {
+            port = Integer.valueOf(System.getenv("PORT"));
+        } catch (Exception e) {
+            port = 8881;
+        }
+        return port;
     }
 }

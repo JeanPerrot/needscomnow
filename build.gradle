@@ -11,6 +11,11 @@ ideaProject {
     javaVersion = '1.6'
 }
 
+idea{
+    project{
+        jdkName='1.6'
+    }
+}
 
 repositories {
     mavenCentral()
