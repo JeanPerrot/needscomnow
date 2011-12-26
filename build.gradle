@@ -3,12 +3,12 @@ apply plugin: 'groovy'
 apply plugin: 'idea'
 apply plugin: 'application'
 
-mainClassName = "org.rhok.pdx.SignalStrength"
+mainClassName = "org.rhok.pdx.SignalGrafiti"
 applicationName = "app"
 
-sourceCompatibility=1.6
-ideaProject{
-  javaVersion = '1.6'
+sourceCompatibility = 1.6
+ideaProject {
+    javaVersion = '1.6'
 }
 
 
@@ -19,8 +19,8 @@ repositories {
 dependencies {
 
     testCompile 'junit:junit:4.8.2'
-    compile 'org.eclipse.jetty:jetty-servlet:7.5.3.v20111011'
-
+    compile 'org.eclipse.jetty:jetty-servlet:7.4.5.v20110725'
+    compile 'org.mortbay.jetty:jetty:6.1.25'
     compile 'javax.servlet:servlet-api:2.5'
     compile 'org.mongodb:mongo-java-driver:2.7.2'
     compile 'com.google.code.gson:gson:2.0'
@@ -30,6 +30,7 @@ dependencies {
     }
 
     compile 'de.micromata.jak:JavaAPIforKml:2.2.0'
+    compile files('libs/graffiti-1.0-rest-SNAPSHOT.jar')
 
     groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.8.2'
 
