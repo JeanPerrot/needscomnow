@@ -1,0 +1,5 @@
+TODO:
+
+- launch MongoDB from test class
+- Spock for tests?
+- Basic integration test for POST and GET and KML

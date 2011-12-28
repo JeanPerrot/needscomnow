@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util-2.5.xsd
+           http://www.springframework.org/schema/jee
+           http://www.springframework.org/schema/jee/spring-jee.xsd">
+
+    <jee:jndi-lookup id="port" jndi-name="port" default-value="8881"/>
+
+    <bean id="mongoAccess" class="org.rhok.pdx.dao.MongoAccess"/>
+
+    <bean id="measurementsDAO" class="org.rhok.pdx.dao.MeasurementsDAOImpl">
+        <property name="mongoAccess" ref="mongoAccess"/>
+    </bean>
+
+    <bean id="mockMeasurementsDAO" class="org.rhok.pdx.dao.MockMeasurementDAO"/>
+
+    <bean id="measurementsService" class="org.rhok.pdx.service.SignalStrengthService">
+        <property name="dao" ref="measurementsDAO"/>
+        <!--<property name="dao" ref="mockMeasurementsDAO"/>-->
+    </bean>
+
+    <bean id="signalStrengthApplication" class="org.rhok.pdx.web.SignalStrengthApplication">
+        <property name="router" ref="restletRouter"/>
+    </bean>
+
+    <bean name="restletRouter" class="org.restlet.ext.spring.SpringRouter">
+        <property name="attachments" ref="attachments"/>
+    </bean>
+
+    <util:map id="attachments">
+        <entry key="/" value-ref="signalStrengthResourceFinder"/>
+    </util:map>
+
+    <!-- Resource definitions -->
+    <bean id="signalStrengthResourceFinder" class="org.restlet.ext.spring.SpringFinder">
+        <lookup-method name="create" bean="signalStrengthResource"/>
+    </bean>
+
+    <bean id="signalStrengthsResourceFinder" class="org.restlet.ext.spring.SpringFinder">
+        <lookup-method name="create" bean="signalStrengthsResource"/>
+    </bean>
+
+
+    <bean id="signalStrengthResource" scope="prototype" class="org.rhok.pdx.web.SignalStrengthResource">
+        <property name="service" ref="measurementsService"/>
+    </bean>
+
+    <bean id="signalStrengthsResource" scope="prototype" class="org.rhok.pdx.web.SignalStrengthsResource">
+        <property name="service" ref="measurementsService"/>
+    </bean>
+
+</beans>

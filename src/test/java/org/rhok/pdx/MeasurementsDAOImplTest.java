@@ -1,20 +1,37 @@
 package org.rhok.pdx;
 
 import com.mongodb.DBCursor;
-import com.mongodb.DBObject;
 import org.eclipse.jetty.util.ajax.JSON;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
-
-import java.util.List;
+import org.rhok.pdx.dao.MeasurementsDAOImpl;
+import org.rhok.pdx.dao.MongoAccess;
+import org.rhok.pdx.dao.MongoLauncher;
+import org.rhok.pdx.model.DataPoint;
+import org.rhok.pdx.model.Location;
+import org.rhok.pdx.model.Measurements;
 
 import static junit.framework.Assert.assertEquals;
 
 //this assumes that MongoDB is running in the background on localhost.
 public class MeasurementsDAOImplTest {
 
+    private static MongoLauncher mongoLauncher;
     private MeasurementsDAOImpl dao;
     private MongoAccess access;
+
+    @BeforeClass
+    public static void beforeClass() {
+        mongoLauncher = new MongoLauncher();
+        mongoLauncher.launchMongo();
+    }
+
+    @AfterClass
+    public static void afterClass() {
+        mongoLauncher.stopMongo();
+    }
 
     @Before
     public void setup() {
@@ -23,6 +40,7 @@ public class MeasurementsDAOImplTest {
         access.setupDB();
         dao = new MeasurementsDAOImpl();
         dao.setMongoAccess(access);
+        mongoLauncher = new MongoLauncher();
     }
 
     @Test

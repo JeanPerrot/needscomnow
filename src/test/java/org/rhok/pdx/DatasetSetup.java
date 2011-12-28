@@ -1,6 +1,9 @@
 package org.rhok.pdx;
 
 import org.junit.Test;
+import org.rhok.pdx.dao.MeasurementsDAOImpl;
+import org.rhok.pdx.dao.MongoAccess;
+import org.rhok.pdx.model.Measurements;
 
 public class DatasetSetup {
 
