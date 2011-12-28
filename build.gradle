@@ -21,6 +21,7 @@ idea {
 repositories {
     mavenCentral()
     mavenRepo urls: "http://snapshots.repository.codehaus.org"
+    mavenRepo urls: "http://maven.restlet.org"
 }
 
 dependencies {
