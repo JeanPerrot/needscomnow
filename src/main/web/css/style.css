@@ -1,0 +1,109 @@
+h2 {
+	border: none;
+}
+#wrapper {
+	width: auto;
+	margin: 0 20px;
+
+}
+#content {
+	overflow: auto;
+	margin: 20px;
+}
+#map_container {
+	margin: 0 0 1em 0;
+}
+#map {
+	height: 500px;
+	border: 1px solid black;
+}
+#properties #map {
+	height: 400px;
+}
+.buttons {
+	overflow: auto;
+	margin: 5px 0;
+	clear: both;
+}
+.buttons input {
+	float: left;
+}
+
+.buttons ul {
+	list-style: none;
+	margin: 5px 0 0;
+	padding: 0;
+	float: right;
+}
+
+.buttons li {
+	display: inline;
+	margin-left: 10px;
+}
+.buttons a {
+	color: #000;
+
+}
+.buttons a:visited {
+	color: #333;
+}
+.buttons a:hover {
+	background: #eee;
+
+}
+.buttons li.selected a {
+	font-weight: bold;
+}
+
+form {
+	overflow: auto;
+	padding: 0;
+	margin: 0;
+	border-top: 1px solid #eee;
+}
+fieldset {
+	border: none;
+	margin: 0;
+	padding: 1em 0;
+}
+
+#required_properties,
+#optional_properties {
+	width: 49.9%;
+	float: left;
+	min-width: 200px;
+}
+#submit {
+	border-top: 1px solid #eee;
+	clear: left;
+}
+
+fieldset > div {
+	clear: both;
+	margin-bottom: 3px;
+}
+label {
+	display: block;
+	width: 14em;
+	margin: 0 10px 0 0;
+	clear: left;
+	float: left;
+}
+label.inline {
+	/*
+	display: inline;
+	float: none;
+	*/
+}
+select,
+input,
+textarea {
+	margin-bottom: 0;
+}
+
+#center {
+	width: 145px;
+}
+select {
+	width: 150px;
+}

@@ -30,28 +30,24 @@
     </bean>
 
     <bean name="restletRouter" class="org.restlet.ext.spring.SpringRouter">
-        <property name="attachments" ref="attachments"/>
+        <property name="attachments">
+            <map>
+                <entry key="/" value-ref="signalStrengthResourceFinder"/>
+                <entry key="/web/" value-ref="signalStrengthResourceFinder"/>
+            </map>
+        </property>
     </bean>
 
-    <util:map id="attachments">
-        <entry key="/" value-ref="signalStrengthResourceFinder"/>
-    </util:map>
+    <!--<bean id="webDir" class=""-->
+
 
     <!-- Resource definitions -->
     <bean id="signalStrengthResourceFinder" class="org.restlet.ext.spring.SpringFinder">
         <lookup-method name="create" bean="signalStrengthResource"/>
     </bean>
 
-    <bean id="signalStrengthsResourceFinder" class="org.restlet.ext.spring.SpringFinder">
-        <lookup-method name="create" bean="signalStrengthsResource"/>
-    </bean>
-
 
     <bean id="signalStrengthResource" scope="prototype" class="org.rhok.pdx.web.SignalStrengthResource">
-        <property name="service" ref="measurementsService"/>
-    </bean>
-
-    <bean id="signalStrengthsResource" scope="prototype" class="org.rhok.pdx.web.SignalStrengthsResource">
         <property name="service" ref="measurementsService"/>
     </bean>
 
