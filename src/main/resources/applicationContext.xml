@@ -18,6 +18,7 @@
         <property name="mongoAccess" ref="mongoAccess"/>
     </bean>
 
+
     <bean id="mockMeasurementsDAO" class="org.rhok.pdx.dao.MockMeasurementDAO"/>
 
     <bean id="measurementsService" class="org.rhok.pdx.service.SignalStrengthService">

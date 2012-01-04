@@ -19,11 +19,32 @@ public class KmlMapper {
         double maxIntensity = getMaxIntensity(measurements);
         int divisions = 50;
 
+//        final GroundOverlay groundoverlay = kml.createAndSetGroundOverlay()
+//                .withName("GroundOverlay.kml")
+//                .withColor("7fffffff")
+//                .withDrawOrder(1);
+//
+//        groundoverlay.createAndSetIcon()
+//                .withHref("http://www.google.com/intl/en/images/logo.gif")
+//                .withRefreshMode(RefreshMode.ON_INTERVAL)
+//                .withRefreshInterval(86400d)
+//                .withViewBoundScale(0.75d);
+//
+//        groundoverlay.createAndSetLatLonBox()
+//                .withNorth(37.83234d)
+//                .withSouth(37.832122d)
+//                .withEast(-122.373033d)
+//                .withWest(-122.373724d)
+//                .withRotation(45d);
+
+
 
         Document doc = kml.createAndSetDocument().withName("signal strength map").withOpen(true);
-
-        Folder folder = doc.createAndAddFolder();
-        folder.withName("strength tiles").withOpen(true);
+        final LookAt lookat = doc.createAndSetLookAt()
+                .withLongitude(-122.50)
+                .withLatitude(45.2083);
+//        Folder folder = doc.createAndAddFolder();
+//        folder.withName("strength tiles").withOpen(true);
 
         org.rhok.pdx.model.Location topLeft = new org.rhok.pdx.model.Location(params.latitude - params.range, params.longitude - params.range);
         org.rhok.pdx.model.Location bottomRight = new org.rhok.pdx.model.Location(params.latitude + params.range, params.longitude + params.range);
@@ -44,7 +65,7 @@ public class KmlMapper {
             double lat = entry.getKey().getLat() + heightInc / 2;
             double lng = entry.getKey().getLng() + widthInc / 2;
 
-            folder.createAndAddPlacemark().addToStyleSelector(style).withStyleUrl(style.getId())
+            doc.createAndAddPlacemark().addToStyleSelector(style).withStyleUrl(style.getId())
                     .withOpen(Boolean.FALSE)
                     .createAndSetPolygon()
                     .createAndSetOuterBoundaryIs()
