@@ -18,8 +18,8 @@ public class MockMeasurementDAO implements MeasurementsDAO {
         double beginLng = l.getLng() - radius;
         for (int i = 0; i < 30; i++) {
             for (int j = 0; j < 30; j++) {
-                double lat = beginLat + i / 30 * radius;
-                double lng = beginLng + i / 30 * radius;
+                double lat = beginLat + (double)i / 30 * radius;
+                double lng = beginLng + (double)j / 30 * radius;
 
 
                 int signal = i + j;

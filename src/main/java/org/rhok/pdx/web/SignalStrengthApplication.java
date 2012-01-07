@@ -41,7 +41,7 @@ public class SignalStrengthApplication extends Application {
     private void attachHtml(){
         Directory directory = new Directory(getContext(), "file:///Users/jperrot/github/fun/rhok/needcomsnow/src/main/web/");
         directory.setListingAllowed(true);
-        router.attach("/web2/", directory);
+        router.attach("/web/", directory);
     }
 
     public static void shutdown() throws Exception {

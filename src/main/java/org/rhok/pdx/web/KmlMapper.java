@@ -5,77 +5,37 @@ import org.rhok.pdx.model.DataPoint;
 import org.rhok.pdx.model.Measurements;
 import org.rhok.pdx.model.RequestParams;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 public class KmlMapper {
+
 
     public Kml toKml(Measurements measurements, RequestParams params) {
         final Kml kml = new Kml();
 
         //TODO - absolute scale of cell phone intensity
         double maxIntensity = getMaxIntensity(measurements);
-        int divisions = 50;
-
-//        final GroundOverlay groundoverlay = kml.createAndSetGroundOverlay()
-//                .withName("GroundOverlay.kml")
-//                .withColor("7fffffff")
-//                .withDrawOrder(1);
-//
-//        groundoverlay.createAndSetIcon()
-//                .withHref("http://www.google.com/intl/en/images/logo.gif")
-//                .withRefreshMode(RefreshMode.ON_INTERVAL)
-//                .withRefreshInterval(86400d)
-//                .withViewBoundScale(0.75d);
-//
-//        groundoverlay.createAndSetLatLonBox()
-//                .withNorth(37.83234d)
-//                .withSouth(37.832122d)
-//                .withEast(-122.373033d)
-//                .withWest(-122.373724d)
-//                .withRotation(45d);
-
-
+        double averageIntensity = average(measurements.getMeasurements());
 
         Document doc = kml.createAndSetDocument().withName("signal strength map").withOpen(true);
-        final LookAt lookat = doc.createAndSetLookAt()
-                .withLongitude(-122.50)
-                .withLatitude(45.2083);
+//        final LookAt lookat = doc.createAndSetLookAt()
+//                .withLongitude(params.longitude)
+//                .withLatitude(params.latitude);
 //        Folder folder = doc.createAndAddFolder();
 //        folder.withName("strength tiles").withOpen(true);
 
-        org.rhok.pdx.model.Location topLeft = new org.rhok.pdx.model.Location(params.latitude - params.range, params.longitude - params.range);
-        org.rhok.pdx.model.Location bottomRight = new org.rhok.pdx.model.Location(params.latitude + params.range, params.longitude + params.range);
-        Map<org.rhok.pdx.model.Location, Collection<DataPoint>> bins = getBins(measurements, topLeft, bottomRight, divisions);
 
-        double widthInc = (bottomRight.getLng() - topLeft.getLng()) / divisions;
-        double heightInc = (bottomRight.getLat() - topLeft.getLat()) / divisions;
-        int index = 0;
-        for (Map.Entry<org.rhok.pdx.model.Location, Collection<DataPoint>> entry : bins.entrySet()) {
+        for (DataPoint dataPoint : measurements.getMeasurements()) {
+            int color = (int) (((dataPoint.getSignal()) / maxIntensity) * 255);
+            String styleId = "testStyle" + color;
+            Style style = iconStyle(color, styleId);
 
-            int signal = average(entry.getValue());
-
-            int someNumber = (int) ((((double) signal) / maxIntensity) * 255);
-            String color = Integer.toHexString(someNumber);
-            String styleId = "testStyle" + color + "_" + index;
-            Style style = polygonStyle("14" + color + "ff", styleId);
-
-            double lat = entry.getKey().getLat() + heightInc / 2;
-            double lng = entry.getKey().getLng() + widthInc / 2;
-
-            doc.createAndAddPlacemark().addToStyleSelector(style).withStyleUrl(style.getId())
-                    .withOpen(Boolean.FALSE)
-                    .createAndSetPolygon()
-                    .createAndSetOuterBoundaryIs()
-                    .withLinearRing(
-                            new LinearRing()
-                                    .addToCoordinates(lng - widthInc, lat - heightInc)
-                                    .addToCoordinates(lng + widthInc, lat - heightInc)
-                                    .addToCoordinates(lng + widthInc, lat + heightInc)
-                                    .addToCoordinates(lng - widthInc, lat + heightInc));
-
+            doc.createAndAddPlacemark()
+                    .withDescription("signal strength: " + dataPoint.getSignal() + "<br>latitude: " + dataPoint.getLocation().getLat() + "<br>longitude: " + dataPoint.getLocation().getLng())
+                    .addToStyleSelector(style)
+                    .withStyleUrl(style.getId())
+                    .createAndSetPoint()
+                    .addToCoordinates(dataPoint.getLocation().getLng(), dataPoint.getLocation().getLat());
         }
         return kml;
     }
@@ -97,35 +57,29 @@ public class KmlMapper {
         return total / value.size();
     }
 
-    private Map<org.rhok.pdx.model.Location, Collection<DataPoint>> getBins(Measurements measurement, org.rhok.pdx.model.Location topLeft, org.rhok.pdx.model.Location bottomRight, int divisions) {
-        Map<org.rhok.pdx.model.Location, Collection<DataPoint>> retValue = new HashMap<org.rhok.pdx.model.Location, Collection<DataPoint>>();
+    private Style iconStyle(int rgb, String id) {
+        String href = getIconForColor(rgb);
+        Style style = new Style();
+        style.withId(id).createAndSetIconStyle()
+                .withColorMode(ColorMode.NORMAL)
+                .withScale(1.5d)
+                .createAndSetIcon()
+                .withHref(href);
+        return style;
+    }
 
-        for (DataPoint dataPoint : measurement.getMeasurements()) {
-            org.rhok.pdx.model.Location key = getKey(dataPoint.getLocation(), topLeft, bottomRight, divisions);
-            Collection<DataPoint> dataPoints = retValue.get(key);
-            if (dataPoints == null) {
-                dataPoints = new ArrayList<DataPoint>();
-                retValue.put(key, dataPoints);
-            }
-            dataPoints.add(dataPoint);
+    private String getIconForColor(int rgb) {
+        //on a scale from 0 to 255
+        String color = "";
+        if (rgb < 10) {
+            color = "Red";
+        } else if (rgb < 128) {
+            color = "Orange";
+        } else {
+            color = "Green";
         }
-
-        return retValue;
+        return "http://localhost:8881/web/img/signal" + color + ".png";
     }
-
-    private org.rhok.pdx.model.Location getKey(org.rhok.pdx.model.Location location, org.rhok.pdx.model.Location topLeft, org.rhok.pdx.model.Location bottomRight, int divisions) {
-        double lat = topLeft.getLat();
-        double lng = topLeft.getLng();
-
-        double widthInc = (bottomRight.getLng() - lng) / divisions;
-        double heightInc = (bottomRight.getLat() - lat) / divisions;
-
-        int x = (int) ((location.getLng() - lng) / widthInc);
-        int y = (int) ((location.getLat() - lat) / heightInc);
-
-        return new org.rhok.pdx.model.Location(lat + y * widthInc, lng + x * heightInc);
-    }
-
 
     private Style polygonStyle(String rgb, String id) {
         Style style = new Style();
