@@ -15,7 +15,7 @@
              var lng=center.lng()
              var span=map.getBounds().toSpan()
              var range=Math.max(span.lat(),span.lng())
-             myParser.parse('http://localhost:8881/?lat='+lat+'&lng='+lng+'&range='+range);
+             myParser.parse('/?lat='+lat+'&lng='+lng+'&range='+range);
         }
         }
         })();
