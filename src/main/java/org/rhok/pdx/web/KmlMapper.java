@@ -10,6 +10,8 @@ import java.util.Collection;
 public class KmlMapper {
 
 
+    public static final String WEB_DIR = "/web/img/";
+
     public Kml toKml(Measurements measurements, RequestParams params) {
         final Kml kml = new Kml();
 
@@ -78,7 +80,7 @@ public class KmlMapper {
         } else {
             color = "Green";
         }
-        return "http://localhost:8881/web/img/signal" + color + ".png";
+        return WEB_DIR + "signal" + color + ".png";
     }
 
     private Style polygonStyle(String rgb, String id) {
