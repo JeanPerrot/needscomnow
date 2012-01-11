@@ -24,7 +24,6 @@ public class SignalStrengthResource extends ServerResource {
     public static final int DEFAULT_TIMESTAMP = -1;
 
     private SignalStrengthService service;
-    private KmlMapper mapper = new KmlMapper();
 
     @Get("json")
     public Measurements getMeasurements() {
@@ -41,8 +40,17 @@ public class SignalStrengthResource extends ServerResource {
         if (params == null) return null;
         Location location = new Location(params.latitude, params.longitude);
         Measurements measurements = service.getMeasurements(location, params.range, params.timestamp, params.maxCount);
+        KmlMapper mapper = getMapper(params);
         Kml kml = mapper.toKml(measurements, params);
         return represent(kml);
+    }
+
+    private KmlMapper getMapper(RequestParams params) {
+        //that will depend on the span...
+        if (params.range < 0.025) {
+            return new KmlMarkerMapper();
+        }
+        return new KmlHeatMapper();
     }
 
     @Post

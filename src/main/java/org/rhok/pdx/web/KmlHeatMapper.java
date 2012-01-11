@@ -1,7 +1,11 @@
 package org.rhok.pdx.web;
 
-import de.micromata.opengis.kml.v_2_2_0.*;
+import de.micromata.opengis.kml.v_2_2_0.Document;
+import de.micromata.opengis.kml.v_2_2_0.Kml;
+import de.micromata.opengis.kml.v_2_2_0.LinearRing;
+import de.micromata.opengis.kml.v_2_2_0.Style;
 import org.rhok.pdx.model.DataPoint;
+import org.rhok.pdx.model.Location;
 import org.rhok.pdx.model.Measurements;
 import org.rhok.pdx.model.RequestParams;
 
@@ -11,44 +15,37 @@ import java.util.HashMap;
 import java.util.Map;
 
 //experimental - for many markers, attempt to cluster them.
-public class KmlHeatMapper {
+public class KmlHeatMapper implements KmlMapper {
 
+    public static final int DIVISIONS = 500;
+    private static final int MAX_SIGNAL = 30;
 
-
+    @Override
     public Kml toKml(Measurements measurements, RequestParams params) {
         final Kml kml = new Kml();
 
-        //TODO - absolute scale of cell phone intensity
-        double maxIntensity = getMaxIntensity(measurements);
-        int divisions = 50;
         Document doc = kml.createAndSetDocument().withName("signal strength map").withOpen(true);
-        final LookAt lookat = doc.createAndSetLookAt()
-                .withLongitude(-122.50)
-                .withLatitude(45.2083);
-//        Folder folder = doc.createAndAddFolder();
-//        folder.withName("strength tiles").withOpen(true);
+        Location topLeft = new Location(params.latitude - params.range, params.longitude - params.range);
+        Location bottomRight = new Location(params.latitude + params.range, params.longitude + params.range);
+        Map<Location, Collection<DataPoint>> bins = getBins(measurements, topLeft, bottomRight, DIVISIONS);
 
-        org.rhok.pdx.model.Location topLeft = new org.rhok.pdx.model.Location(params.latitude - params.range, params.longitude - params.range);
-        org.rhok.pdx.model.Location bottomRight = new org.rhok.pdx.model.Location(params.latitude + params.range, params.longitude + params.range);
-        Map<org.rhok.pdx.model.Location, Collection<DataPoint>> bins = getBins(measurements, topLeft, bottomRight, divisions);
-
-        double widthInc = (bottomRight.getLng() - topLeft.getLng()) / divisions;
-        double heightInc = (bottomRight.getLat() - topLeft.getLat()) / divisions;
+        double widthInc = (bottomRight.getLng() - topLeft.getLng()) / DIVISIONS;
+        double heightInc = (bottomRight.getLat() - topLeft.getLat()) / DIVISIONS;
         int index = 0;
-        for (Map.Entry<org.rhok.pdx.model.Location, Collection<DataPoint>> entry : bins.entrySet()) {
+        for (Map.Entry<Location, Collection<DataPoint>> entry : bins.entrySet()) {
 
-            int signal = average(entry.getValue());
+            double signal = average(entry.getValue());
+            String color = getBgrColor(signal);
 
-            int someNumber = (int) ((((double) signal) / maxIntensity) * 255);
-            String color = Integer.toHexString(someNumber);
             String styleId = "testStyle" + color + "_" + index;
-            Style style = polygonStyle("14" + color + "ff", styleId);
+            Style style = polygonStyle(color, styleId);
 
             double lat = entry.getKey().getLat() + heightInc / 2;
             double lng = entry.getKey().getLng() + widthInc / 2;
 
             doc.createAndAddPlacemark().addToStyleSelector(style).withStyleUrl(style.getId())
                     .withOpen(Boolean.FALSE)
+                    .withDescription("average signal: " + signal + "\n" + (lng - widthInc) + "," + (lat - heightInc) + "\n" + (lng + widthInc) + "," + (lat + heightInc))
                     .createAndSetPolygon()
                     .createAndSetOuterBoundaryIs()
                     .withLinearRing(
@@ -62,16 +59,15 @@ public class KmlHeatMapper {
         return kml;
     }
 
-    private double getMaxIntensity(Measurements measurements) {
-        double max = -1;
-        for (DataPoint dataPoint : measurements.getMeasurements()) {
-            if (dataPoint.getSignal() > max)
-                max = dataPoint.getSignal();
-        }
-        return max;
+
+    private String getBgrColor(double signal) {
+        int percent = (int) (100 * signal / MAX_SIGNAL);
+        int green = 255 * Math.min(100, percent * 2) / 100;
+        int red = 255 * Math.max(0, 100 - percent * 2) / 100;
+        return "00" + Integer.toHexString(green) + Integer.toHexString(red);
     }
 
-    private int average(Collection<DataPoint> value) {
+    private double average(Collection<DataPoint> value) {
         int total = 0;
         for (DataPoint dataPoint : value) {
             total += dataPoint.getSignal();
@@ -79,11 +75,11 @@ public class KmlHeatMapper {
         return total / value.size();
     }
 
-    private Map<org.rhok.pdx.model.Location, Collection<DataPoint>> getBins(Measurements measurement, org.rhok.pdx.model.Location topLeft, org.rhok.pdx.model.Location bottomRight, int divisions) {
-        Map<org.rhok.pdx.model.Location, Collection<DataPoint>> retValue = new HashMap<org.rhok.pdx.model.Location, Collection<DataPoint>>();
+    private Map<Location, Collection<DataPoint>> getBins(Measurements measurement, Location topLeft, Location bottomRight, int divisions) {
+        Map<Location, Collection<DataPoint>> retValue = new HashMap<Location, Collection<DataPoint>>();
 
         for (DataPoint dataPoint : measurement.getMeasurements()) {
-            org.rhok.pdx.model.Location key = getKey(dataPoint.getLocation(), topLeft, bottomRight, divisions);
+            Location key = getKey(dataPoint.getLocation(), topLeft, bottomRight, divisions);
             Collection<DataPoint> dataPoints = retValue.get(key);
             if (dataPoints == null) {
                 dataPoints = new ArrayList<DataPoint>();
@@ -95,7 +91,7 @@ public class KmlHeatMapper {
         return retValue;
     }
 
-    private org.rhok.pdx.model.Location getKey(org.rhok.pdx.model.Location location, org.rhok.pdx.model.Location topLeft, org.rhok.pdx.model.Location bottomRight, int divisions) {
+    private Location getKey(Location location, Location topLeft, Location bottomRight, int divisions) {
         double lat = topLeft.getLat();
         double lng = topLeft.getLng();
 
@@ -105,13 +101,13 @@ public class KmlHeatMapper {
         int x = (int) ((location.getLng() - lng) / widthInc);
         int y = (int) ((location.getLat() - lat) / heightInc);
 
-        return new org.rhok.pdx.model.Location(lat + y * widthInc, lng + x * heightInc);
+        return new Location(lat + y * widthInc, lng + x * heightInc);
     }
 
 
-    private Style polygonStyle(String rgb, String id) {
+    private Style polygonStyle(String bgr, String id) {
         Style style = new Style();
-        style.createAndSetPolyStyle().withColor("50" + rgb).withOutline(false);
+        style.createAndSetPolyStyle().withColor("50" + bgr).withOutline(false);
         style.setId(id);
         return style;
     }
