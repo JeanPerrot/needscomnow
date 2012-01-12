@@ -51,7 +51,7 @@ public class KmlHeatMapper implements KmlMapper {
 
             doc.createAndAddPlacemark().addToStyleSelector(style).withStyleUrl(style.getId())
                     .withOpen(Boolean.FALSE)
-                    .withDescription("average signal: " + signal + "\n" + (lng - widthInc/2) + "," + (lat - heightInc/2) + "\n" + (lng + widthInc/2) + "," + (lat + heightInc/2))
+                    .withDescription("average signal: " + signal + "</br>" + (lng - widthInc/2) + "," + (lat - heightInc/2) + "</br>" + (lng + widthInc/2) + "," + (lat + heightInc/2))
                     .createAndSetPolygon()
                     .createAndSetOuterBoundaryIs()
                     .withLinearRing(
