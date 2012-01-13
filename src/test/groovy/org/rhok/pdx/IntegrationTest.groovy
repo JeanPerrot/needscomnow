@@ -71,10 +71,6 @@ public class IntegrationTest {
     <Document>
         <name>signal strength map</name>
         <open>1</open>
-        <Folder>
-            <name>strength tiles</name>
-            <open>1</open>
-        </Folder>
     </Document>
 </kml>
 """
