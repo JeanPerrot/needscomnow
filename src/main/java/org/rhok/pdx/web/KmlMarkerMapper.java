@@ -13,19 +13,24 @@ public class KmlMarkerMapper implements KmlMapper {
         final Kml kml = new Kml();
 
         Document doc = kml.createAndSetDocument().withName("signal strength map").withOpen(true);
+        doc.addToStyleSelector(getStyle(LEVEL.GOOD));
+        doc.addToStyleSelector(getStyle(LEVEL.LOW));
+        doc.addToStyleSelector(getStyle(LEVEL.NONE));
         for (DataPoint dataPoint : measurements.getMeasurements()) {
             LEVEL level = LEVEL.from(dataPoint.getSignal());
-            String styleId = "testStyle" + level;
-            Style style = iconStyle(level, styleId);
-
+            Style style = getStyle(level);
             doc.createAndAddPlacemark()
                     .withDescription("signal strength: " + dataPoint.getSignal() + "<br>latitude: " + dataPoint.getLocation().getLat() + "<br>longitude: " + dataPoint.getLocation().getLng())
-                    .addToStyleSelector(style)
-                    .withStyleUrl(style.getId())
+                    .withStyleUrl("#"+style.getId())
                     .createAndSetPoint()
                     .addToCoordinates(dataPoint.getLocation().getLng(), dataPoint.getLocation().getLat());
         }
         return kml;
+    }
+
+    private Style getStyle(LEVEL level) {
+        String styleId = "testStyle" + level;
+        return iconStyle(level, styleId);
     }
 
     private Style iconStyle(LEVEL level, String id) {
