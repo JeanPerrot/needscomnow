@@ -9,7 +9,7 @@ public class MongoAccess {
     //    public static final String DB_NAME = "signalstrength";
     public static final String MONGO_URL_PROP = "MONGOHQ_URL";
     public static final String MEASUREMENTS = "measurements";
-    public static final int COLLECTION_EXISTS = -5;
+    private static final int COLLECTION_EXISTS = -5;
 
     private String dbName;
     private Mongo mongo;
